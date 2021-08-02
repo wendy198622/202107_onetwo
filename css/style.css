@@ -212,9 +212,23 @@ section .container .infoBox .contentBox .txt {
   margin-top: 5px;
 }
 
+@media (max-width: 600px) {
+  section .container .infoBox .contentBox .txt {
+    width: 100%;
+  }
+}
+
 section .container .infoBox .contentBox .img {
   width: 280px;
   float: right;
+}
+
+@media (max-width: 600px) {
+  section .container .infoBox .contentBox .img {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+  }
 }
 
 section .container .infoBox .contentBox .img img {
@@ -223,6 +237,17 @@ section .container .infoBox .contentBox .img img {
 
 section .container .infoBox .contentBox .img img:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  section .container .infoBox .contentBox .img img {
+    width: calc((100% - 20px) / 2);
+    float: left;
+    margin-right: 20px;
+  }
+  section .container .infoBox .contentBox .img img:last-child {
+    margin-right: 0;
+  }
 }
 
 section .container .themeBox {
@@ -234,6 +259,12 @@ section .container .themeBox .img {
   float: left;
 }
 
+@media (max-width: 600px) {
+  section .container .themeBox .img {
+    width: 100%;
+  }
+}
+
 section .container .themeBox .txt {
   width: calc(310/728*100%);
   float: right;
@@ -242,6 +273,13 @@ section .container .themeBox .txt {
   line-height: 24px;
   letter-spacing: 1px;
   text-align: justify;
+}
+
+@media (max-width: 600px) {
+  section .container .themeBox .txt {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 section .container .themeBox p {
@@ -292,6 +330,12 @@ section .container .block .left {
   float: left;
 }
 
+@media (max-width: 600px) {
+  section .container .block .left {
+    width: 100%;
+  }
+}
+
 section .container .block .left .txt {
   color: #ffffff;
   font-size: 15px;
@@ -302,6 +346,13 @@ section .container .block .left .txt {
 section .container .block .right {
   width: calc(358/728*100%);
   float: right;
+}
+
+@media (max-width: 600px) {
+  section .container .block .right {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 section .container .block .right img {
@@ -344,6 +395,12 @@ section .container .logogroup .blocktree {
 section .container .houseinfo {
   width: calc(410/728*100%);
   margin: 40px auto;
+}
+
+@media (max-width: 600px) {
+  section .container .houseinfo {
+    width: 80%;
+  }
 }
 
 section .container .formBox {
