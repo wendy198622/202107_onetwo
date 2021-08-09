@@ -116,7 +116,7 @@
                     <img src="img/theme2_title.svg" alt="">
                 </div>
                 <div class="themeBox">
-                    <div class="img wow fadeInLeft"><img src="img/theme2-1.jpg" alt=""></div>
+                    <div class="img wow fadeInLeft"><img class="open_popup" src="img/theme2-1.jpg" alt=""></div>
                     <div class="txt wow fadeInLeft" data-wow-delay=".3s">
                         【一二行館】一派從容雅閑之姿，來自近城又離塵的地利優勢，前瞻未來「楊梅體育園區」、「新建楊梅行政中心」、「智慧產業園區」等重大發展工程，勢必牽動區域願景沸騰，如此私家大院的珍貴難得，價值必然無可取代！
                     </div>
@@ -263,9 +263,9 @@
                     <div class="blocktree wow fadeInLeft" data-wow-delay=".6s"><img src="img/theme4_tree.svg" alt=""></div>
                 </div>
                 <div class="houseinfo wow fadeInLeft" data-wow-delay=".3s">
-                    <a href="tel:034782088">
-                        <img src="img/section4_houseinfo.svg" alt="">
-                    </a>
+                    <a class="callphone" href="tel:034782088"></a>
+                    <a class="gotomap" href="https://www.google.com/maps?ll=24.915306,121.109944&z=16&t=m&hl=zh-TW&gl=TW&mapclient=embed" target="_blank"></a>
+                    <img src="img/section4_houseinfo.svg" alt="">
                 </div>
                 <div class="mapBox">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.49195165593!2d121.10775571500393!3d24.91530558402815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzU1LjEiTiAxMjHCsDA2JzM1LjgiRQ!5e0!3m2!1szh-TW!2stw!4v1628489794822!5m2!1szh-TW!2stw" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -277,6 +277,14 @@
             <div class="formGroup">
                 {{msg}}
             </div>
+        </section>
+
+        <section class="popup_photo">
+            <!-- <div class="inside"> -->
+                <img src="img/theme2-1.jpg" alt="">
+                <i class="material-icons popup_close">close</i>
+            <!-- </div> -->
+                
         </section>
     </div>
 
@@ -376,6 +384,14 @@
             $("html, body").animate({
                 scrollTop: 0
             }, 500);
+        });
+
+        $('.open_popup').on('click', function () {
+            $('.popup_photo').addClass('is_acted');
+        });
+
+        $('.popup_close').on('click', function () {
+            $('.popup_photo').removeClass('is_acted');
         });
 
 

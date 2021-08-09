@@ -82,9 +82,21 @@ section.section2 .themetitle {
   width: calc(578/728*100%);
 }
 
+@media (max-width: 600px) {
+  section.section2 .themetitle {
+    width: 98%;
+  }
+}
+
 section.section3 .themetitle1 {
   width: calc(318/370*100%);
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  section.section3 .themetitle1 {
+    width: 90%;
+  }
 }
 
 section.section3 .themetitle2 {
@@ -92,9 +104,21 @@ section.section3 .themetitle2 {
   margin: 0 auto;
 }
 
+@media (max-width: 600px) {
+  section.section3 .themetitle2 {
+    width: 90%;
+  }
+}
+
 section.section3 .themetitle3 {
   width: calc(268/728*100%);
   margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  section.section3 .themetitle3 {
+    width: 90%;
+  }
 }
 
 section .container {
@@ -466,6 +490,25 @@ section .container .logogroup .blocktree {
 section .container .houseinfo {
   width: calc(410/728*100%);
   margin: 40px auto;
+  position: relative;
+}
+
+section .container .houseinfo .callphone {
+  width: 100%;
+  height: 0;
+  padding-bottom: 15%;
+  display: block;
+  position: absolute;
+  top: 34%;
+}
+
+section .container .houseinfo .gotomap {
+  width: 100%;
+  height: 0;
+  padding-bottom: 20%;
+  display: block;
+  position: absolute;
+  top: 66%;
 }
 
 @media (max-width: 600px) {
@@ -940,6 +983,52 @@ section .container .navBox ul li:last-child {
 }
 
 .popup.is_acted {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup_photo {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.popup_photo img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 20px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.popup_photo .popup_close {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.popup_photo.is_acted {
   opacity: 1;
   visibility: visible;
 }

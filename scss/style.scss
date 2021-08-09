@@ -52,20 +52,32 @@ section{
         }
         .themetitle{
             width: calc(578/728*100%);
+            @media (max-width: 600px) {
+                width: 98%;
+            }
         }
     }
     &.section3{
         .themetitle1{
             width: calc(318/370*100%);
             margin-top: 20px;
+            @media (max-width: 600px) {
+                width: 90%;
+            }
         }
         .themetitle2{
             width: calc(508/728*100%);
             margin: 0 auto;
+            @media (max-width: 600px) {
+                width: 90%;
+            }
         }
         .themetitle3{
             width: calc(268/728*100%);
             margin: 0 auto;
+            @media (max-width: 600px) {
+                width: 90%;
+            }
         }
     }
     .container{ 
@@ -345,6 +357,23 @@ section{
         .houseinfo{
             width: calc(410/728*100%);
             margin: 40px auto;
+            position: relative;
+            .callphone{
+                width: 100%;
+                height: 0;
+                padding-bottom: 15%;
+                display: block;
+                position: absolute;
+                top: 34%;
+            }
+            .gotomap{
+                width: 100%;
+                height: 0;
+                padding-bottom: 20%;
+                display: block;
+                position: absolute;
+                top: 66%;
+            }
             @media (max-width: 600px) {
                 width: 80%;
             }
@@ -733,6 +762,49 @@ section{
         //     display: none;;
         // }
     }
+}
+.popup_photo{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+    img{
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 90%;
+        padding: 20px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .popup_close{
+        width: 24px;
+        height: 24px;
+        display: block;
+        color: #fff;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    &.is_acted{
+        opacity: 1;
+        visibility: visible;
+
+    }
+
 }
 .slider_black .slick-prev{
     width: 28px;
