@@ -281,8 +281,8 @@
 
         <section class="popup_photo">
             <!-- <div class="inside"> -->
-                <img src="img/theme2-1.jpg" alt="">
                 <i class="material-icons popup_close">close</i>
+                <!-- <img src="img/theme2-1.jpg" alt=""> -->
             <!-- </div> -->
                 
         </section>
@@ -386,12 +386,13 @@
             }, 500);
         });
 
-        $('.open_popup').on('click', function () {
-            $('.popup_photo').addClass('is_acted');
+        $('.open_popup').on('click', function (event) {
+            $('.popup_photo').addClass('is_acted').append($(event.target).clone().addClass('targetImg'));
         });
 
         $('.popup_close').on('click', function () {
-            $('.popup_photo').removeClass('is_acted');
+            $('.popup_photo').removeClass('is_acted')
+            $('.targetImg').remove()
         });
 
 
