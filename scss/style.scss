@@ -34,8 +34,13 @@ section{
     &.header{
         max-width: 100%;
         background-color: #877254;
+        overflow: visible;
+        display: table;
         @media (max-width: 800px) {
             max-width: 800px;
+        }
+        .container{
+            width: 100%;
         }
     }
     &.section2{
@@ -72,15 +77,36 @@ section{
             height: 42px;
             float: left;
             background-color: #877254;
-            overflow: hidden;
+            display: table;
             .logo{
                 width: 156px;
                 padding: 8px 20px 8px 30px;
                 float: left;
+                @media (max-width: 540px) {
+                    width: 116px;
+                    padding: 8px 0px 8px 10px;
+                }
             }
             ul{
                 overflow: hidden;
                 margin: 10px 0;
+                &.pc{ display: block;}
+                &.mob{ display: none;}
+                @media (max-width: 640px) {
+                    margin: 5px 0;
+                    line-height: 1.2;
+                    &.pc{ display: none;}
+                    &.mob{ display: block;}
+                }
+                @media (max-width: 540px) {
+                    width: 307px;
+                    position: absolute;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    &.pc{ display: block;}
+                    &.mob{ display: none;}
+                }
                 li{
                     float: left;
                     color: #FFF9B1;
@@ -106,6 +132,9 @@ section{
                 vertical-align: middle;
                 font-family: 'Noto Sans TC', sans-serif;
                 padding-top: 5px;
+                a{
+                    color: #FFF;
+                }
                 span{
                     width: 36px;
                     font-size: 14px;
@@ -128,6 +157,9 @@ section{
                 color: #FFF9B1;
                 background-color: #432C30;
                 text-align: center;
+                a{
+                    color: #FFF9B1;
+                }
             }
         }
         .kvlogo{
@@ -135,23 +167,30 @@ section{
             margin: 60px auto;
             overflow: hidden;
             .icon{
-                width: calc(126/655*100%);
+                width: calc(160/655*100%);
                 float: left;
             }
             .logo{
-                width: calc(388/655*100%);
+                width: calc(450/655*100%);
                 float: right;
             }
         }
         .titleBox{
             width: calc(655/728*100%);
-            height: 220px;
+            // height: 220px;
             margin: 0px auto;
+            padding: 0 0 18%;
             font-size: 34px;
             font-weight: 600;
             letter-spacing: 5px;
-            background: url(../img/theme1_tree.svg) right top no-repeat;
-            background-size: contain;
+            background: url(../img/theme1_tree.svg) right bottom no-repeat;
+            background-size: 42% auto;
+            @media (max-width: 600px) {
+                font-size: 6vw;
+            }
+            @media (max-width: 420px) {
+                font-size: 5.5vw;
+            }
         }
         .infoBox{
             .contentBox{
