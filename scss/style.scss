@@ -36,6 +36,7 @@ section{
         background-color: #877254;
         overflow: visible;
         display: table;
+        z-index: 99;
         @media (max-width: 800px) {
             max-width: 800px;
         }
@@ -111,7 +112,7 @@ section{
                     &.mob{ display: block;}
                 }
                 @media (max-width: 540px) {
-                    width: 307px;
+                    width: 100%;
                     position: absolute;
                     top: 50px;
                     left: 50%;
@@ -126,6 +127,14 @@ section{
                     border-right: 1px solid #FFF9B1;
                     &:last-child{
                         border-right: 0;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    @media (max-width: 540px) {
+                        width: 25%;
+                        text-align: center;
+                        font-size: 13px;
                     }
                 }
             }
@@ -275,7 +284,7 @@ section{
                 margin: 20px 0;
             }
             .imgBox{
-                img{
+                .zoom{
                     width: calc((100% - 30px) / 3);
                     margin-right: 15px;
                     margin-bottom: 15px;
@@ -297,6 +306,9 @@ section{
             letter-spacing: 1px;
             background: url(../img/theme3_tree.svg) right bottom no-repeat;
             background-size: auto 60%;
+            @media (max-width: 600px) {
+                background-size: auto 30%;
+            }
         }
         .block{
             margin: 40px 0;
@@ -322,7 +334,7 @@ section{
                     width: 100%;
                     margin-top: 20px;
                 }
-                img{
+                .zoom{
                     width: calc((100% - 10px) / 2);
                     float: left;
                     &:nth-child(1) {
@@ -400,6 +412,9 @@ section{
                     color: #fff;
                     &.small{
                         width: calc((100% - 10px) / 2);
+                        @media (max-width: 600px) {
+                            width: 100%;
+                        }
                     }
                     &.mr-10{
                         margin-right: 10px;
@@ -454,7 +469,7 @@ section{
                         color: #fff;
                         background-color: transparent ;
                         &:valid{
-                            color: #fff;
+                            // color: #fff;
                             background-color: transparent ;
                         }
                         &:checked, &:focus{
@@ -805,6 +820,20 @@ section{
 
     }
 
+}
+.zoom{
+    position: relative;
+    &:before{
+        content: url(../img/fit_screen_black_24dp.svg);
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        z-index: 0;
+        z-index: 5;
+        right: 10px;
+        bottom: 10px;
+    }
 }
 .slider_black .slick-prev{
     width: 28px;

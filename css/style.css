@@ -54,6 +54,7 @@ section.header {
   background-color: #877254;
   overflow: visible;
   display: table;
+  z-index: 99;
 }
 
 @media (max-width: 800px) {
@@ -176,7 +177,7 @@ section .container .logoBox ul.mob {
 
 @media (max-width: 540px) {
   section .container .logoBox ul {
-    width: 307px;
+    width: 100%;
     position: absolute;
     top: 50px;
     left: 50%;
@@ -200,6 +201,18 @@ section .container .logoBox ul li {
 
 section .container .logoBox ul li:last-child {
   border-right: 0;
+}
+
+section .container .logoBox ul li:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 540px) {
+  section .container .logoBox ul li {
+    width: 25%;
+    text-align: center;
+    font-size: 13px;
+  }
 }
 
 section .container .reserveBox {
@@ -388,14 +401,14 @@ section .container .themeBox p {
   margin: 20px 0;
 }
 
-section .container .themeBox .imgBox img {
+section .container .themeBox .imgBox .zoom {
   width: calc((100% - 30px) / 3);
   margin-right: 15px;
   margin-bottom: 15px;
   float: left;
 }
 
-section .container .themeBox .imgBox img:nth-child(3n) {
+section .container .themeBox .imgBox .zoom:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -413,6 +426,12 @@ section .container .topinfo {
   letter-spacing: 1px;
   background: url(../img/theme3_tree.svg) right bottom no-repeat;
   background-size: auto 60%;
+}
+
+@media (max-width: 600px) {
+  section .container .topinfo {
+    background-size: auto 30%;
+  }
 }
 
 section .container .block {
@@ -450,16 +469,16 @@ section .container .block .right {
   }
 }
 
-section .container .block .right img {
+section .container .block .right .zoom {
   width: calc((100% - 10px) / 2);
   float: left;
 }
 
-section .container .block .right img:nth-child(1) {
+section .container .block .right .zoom:nth-child(1) {
   margin-right: 10px;
 }
 
-section .container .block .right img:nth-child(2) {
+section .container .block .right .zoom:nth-child(2) {
   margin-bottom: 10px;
 }
 
@@ -547,6 +566,12 @@ section .container .formBox .formContent .item.small {
   width: calc((100% - 10px) / 2);
 }
 
+@media (max-width: 600px) {
+  section .container .formBox .formContent .item.small {
+    width: 100%;
+  }
+}
+
 section .container .formBox .formContent .item.mr-10 {
   margin-right: 10px;
 }
@@ -612,7 +637,6 @@ section .container .formBox .formContent .item select {
 }
 
 section .container .formBox .formContent .item select:valid {
-  color: #fff;
   background-color: transparent;
 }
 
@@ -1031,6 +1055,22 @@ section .container .navBox ul li:last-child {
 .popup_photo.is_acted {
   opacity: 1;
   visibility: visible;
+}
+
+.zoom {
+  position: relative;
+}
+
+.zoom:before {
+  content: url(../img/fit_screen_black_24dp.svg);
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  z-index: 0;
+  z-index: 5;
+  right: 10px;
+  bottom: 10px;
 }
 
 .slider_black .slick-prev {
