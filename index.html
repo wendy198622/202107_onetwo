@@ -178,7 +178,7 @@
                     當內在性靈綻放生命自由與美麗，<br>
                     最完整自在的生活，原來就在一二行館……
                 </div>
-                <div class="imgBox slider wow fadeInLeft" data-wow-delay=".3s">
+                <div class="imgBox slider slider-nav wow fadeInLeft zoom" data-wow-delay=".3s">
                     <div>
                         <img src="img/theme3-1.jpg" alt="">
                     </div>
@@ -222,6 +222,55 @@
                         <img src="img/theme3-17.jpg" alt="">
                     </div>
                 </div>
+                <div class="popup_slider">
+                    
+                    <i class="material-icons popup_close">close</i>
+                    <div class="imgBox slider slider-for">
+                        <div>
+                            <img src="img/theme3-1.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-5.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-6.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-7.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-8.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-9.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-10.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-11.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-12.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-13.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-14.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-15.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-16.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="img/theme3-17.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
                 <div class="block" id="link3">
                     <div class="left">
                         <div class="themetitle1 wow fadeInLeft"><img src="img/theme3_title1.svg" alt=""></div>
@@ -235,11 +284,14 @@
                     </div>
                     <div class="right">
                         <div class="zoom">
-                                <img class="wow fadeInLeft open_popup" src="img/theme3-2.jpg" alt=""></div>
+                            <img class="wow fadeInLeft open_popup" src="img/theme3-2.jpg" alt="">
+                        </div>
                         <div class="zoom">
-                                <img class="wow fadeInLeft open_popup" data-wow-delay=".3s" src="img/theme3-3.jpg" alt=""></div>
+                            <img class="wow fadeInLeft open_popup" data-wow-delay=".3s" src="img/theme3-3.jpg" alt="">
+                        </div>
                         <div class="zoom">
-                                <img class="wow fadeInLeft open_popup" data-wow-delay=".6s" src="img/theme3-4.jpg" alt=""></div>
+                            <img class="wow fadeInLeft open_popup" data-wow-delay=".6s" src="img/theme3-4.jpg" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="block" id="link4">
@@ -411,13 +463,30 @@
 
         new WOW().init();
 
-        $('.slider').slick({
-            infinite: true,
-            autoplay: true,
+        // $('.slider').slick({
+        //     infinite: true,
+        //     autoplay: true,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     arrows: false,
+        //     dots: false
+        // });
+
+        $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            dots: false
+            fade: false,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            arrows: false,
+            dots: false,
+            // centerMode: true,
+            focusOnSelect: true
         });
 
         $(".header li").on("click", function() {
@@ -438,8 +507,14 @@
             $('.popup_photo').addClass('is_acted').append($(event.target).clone().removeClass().addClass('targetImg'));
         });
 
+        $('.slider-nav').on('click', function (event) {
+            $('.slider-nav + .popup_slider').addClass('is_acted').append($(event.target).clone().removeClass().addClass('targetImg'));
+        });
+
+
         $('.popup_close').on('click', function () {
             $('.popup_photo').removeClass('is_acted')
+            $('.slider-nav + .popup_slider').removeClass('is_acted')
             $('.targetImg').remove()
         });
 

@@ -906,3 +906,46 @@ section{
         transform: scaleX(-1) translateX(-10px);
     }
 }
+.slider-nav + .popup_slider{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+    > img{
+        display: none;
+    }
+    &.is_acted{
+        opacity: 1;
+        visibility: visible;
+    }
+    .popup_close{
+        width: 24px;
+        height: 24px;
+        display: block;
+        color: #fff;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .imgBox{
+        width: 90%;
+        height: 0;
+        padding: 20px;
+        padding-bottom: 50.5%;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
