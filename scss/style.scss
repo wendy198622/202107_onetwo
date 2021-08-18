@@ -939,13 +939,50 @@ section{
     .imgBox{
         width: 90%;
         height: 0;
-        padding: 20px;
-        padding-bottom: 50.5%;
+        // padding: 20px;
+        padding-bottom: 48%;
         position: absolute;
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+    }
+}
+
+.slick-dots {
+    bottom: 15px;
+    li{
+        width: 30px;
+        height: 10px;
+        @media (max-width: 800px) {
+            width: 10px;
+            margin: 0 3px;
+        }
+        button{
+            width: 24px;
+            height: 10px;
+            padding: 0;
+            @media (max-width: 800px) {
+                width: 10px;
+            }
+            &:before{
+                content: '';
+                width: 24px;
+                height: 3px;
+                background: #fff;
+                opacity: .5;
+                @media (max-width: 800px) {
+                    width: 10px;
+                }
+            }
+        }
+        &.slick-active{
+            button{
+                &:before{
+                    opacity: 1;
+                }
+            }
+        }
     }
 }

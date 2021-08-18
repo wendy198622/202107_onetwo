@@ -476,7 +476,9 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            fade: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             asNavFor: '.slider-nav'
         });
         $('.slider-nav').slick({
@@ -484,7 +486,9 @@
             slidesToScroll: 1,
             asNavFor: '.slider-for',
             arrows: false,
-            dots: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 2000,            
             // centerMode: true,
             focusOnSelect: true
         });
@@ -507,7 +511,7 @@
             $('.popup_photo').addClass('is_acted').append($(event.target).clone().removeClass().addClass('targetImg'));
         });
 
-        $('.slider-nav').on('click', function (event) {
+        $('.slider-nav img').on('click', function (event) {
             $('.slider-nav + .popup_slider').addClass('is_acted').append($(event.target).clone().removeClass().addClass('targetImg'));
         });
 
